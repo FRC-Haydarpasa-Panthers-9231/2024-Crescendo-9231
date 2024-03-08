@@ -1,0 +1,52 @@
+{
+  "version": 1.0,
+  "waypoints": [
+    {
+      "anchor": {
+        "x": 1.34,
+        "y": 5.54
+      },
+      "prevControl": null,
+      "nextControl": {
+        "x": 1.3377299021645115,
+        "y": 5.531369417831561
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 8.21105488364823,
+        "y": 7.410074050917332
+      },
+      "prevControl": {
+        "x": 8.20055505477781,
+        "y": 7.400005077044089
+      },
+      "nextControl": null,
+      "isLocked": false,
+      "linkedName": null
+    }
+  ],
+  "rotationTargets": [],
+  "constraintZones": [],
+  "eventMarkers": [],
+  "globalConstraints": {
+    "maxVelocity": 3.0,
+    "maxAcceleration": 3.0,
+    "maxAngularVelocity": 540.0,
+    "maxAngularAcceleration": 720.0
+  },
+  "goalEndState": {
+    "velocity": 0,
+    "rotation": 19.79887635452502,
+    "rotateFast": false
+  },
+  "reversed": false,
+  "folder": "orta otonom",
+  "previewStartingState": {
+    "rotation": -0.8073439838627705,
+    "velocity": 0
+  },
+  "useDefaultConstraints": true
+}
