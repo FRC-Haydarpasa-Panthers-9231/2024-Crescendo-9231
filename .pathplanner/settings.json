@@ -1,11 +1,15 @@
 {
-  "robotWidth": 0.9,
-  "robotLength": 0.9,
+  "robotWidth": 0.88,
+  "robotLength": 0.88,
   "holonomicMode": true,
   "pathFolders": [
-    "orta otonom"
+    "New Folder",
+    "alt otonom visionsuz",
+    "orta otonom visionsuz"
   ],
-  "autoFolders": [],
+  "autoFolders": [
+    "ortadan"
+  ],
   "defaultMaxVel": 3.0,
   "defaultMaxAccel": 3.0,
   "defaultMaxAngVel": 540.0,

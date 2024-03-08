@@ -3,13 +3,13 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 8.21,
-        "y": 7.41
+        "x": 2.88,
+        "y": 6.97
       },
       "prevControl": null,
       "nextControl": {
-        "x": 8.207729902164512,
-        "y": 7.401369417831561
+        "x": 2.8777299021645106,
+        "y": 6.961369417831561
       },
       "isLocked": false,
       "linkedName": null
@@ -20,15 +20,26 @@
         "y": 5.54
       },
       "prevControl": {
-        "x": 1.3295001711295793,
-        "y": 5.529931026126756
+        "x": 1.3282891634542182,
+        "y": 5.531369417831561
       },
       "nextControl": null,
       "isLocked": false,
       "linkedName": null
     }
   ],
-  "rotationTargets": [],
+  "rotationTargets": [
+    {
+      "waypointRelativePos": 0.45,
+      "rotationDegrees": -2.240170645148662,
+      "rotateFast": false
+    },
+    {
+      "waypointRelativePos": 1.0,
+      "rotationDegrees": 0.0,
+      "rotateFast": false
+    }
+  ],
   "constraintZones": [],
   "eventMarkers": [],
   "globalConstraints": {
@@ -39,13 +50,13 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": 0.5285169333961186,
+    "rotation": -2.013068516159218,
     "rotateFast": false
   },
   "reversed": false,
-  "folder": "orta otonom",
+  "folder": "orta otonom visionsuz",
   "previewStartingState": {
-    "rotation": 20.137987677001977,
+    "rotation": 44.441055306319846,
     "velocity": 0
   },
   "useDefaultConstraints": true

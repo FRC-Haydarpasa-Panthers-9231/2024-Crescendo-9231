@@ -16,12 +16,12 @@
     },
     {
       "anchor": {
-        "x": 2.883271729453586,
-        "y": 6.9679477447399965
+        "x": 2.6362321955413157,
+        "y": 4.341454836755828
       },
       "prevControl": {
-        "x": 2.8715608929078043,
-        "y": 6.9593171625715575
+        "x": 2.6252413829225842,
+        "y": 4.350985454739365
       },
       "nextControl": null,
       "isLocked": false,
@@ -30,8 +30,8 @@
   ],
   "rotationTargets": [
     {
-      "waypointRelativePos": 0.45,
-      "rotationDegrees": 45.24079363499436,
+      "waypointRelativePos": 0.5,
+      "rotationDegrees": -40.93184094135039,
       "rotateFast": false
     }
   ],
@@ -45,11 +45,11 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": 45.46580908276504,
+    "rotation": -40.60129464500452,
     "rotateFast": false
   },
   "reversed": false,
-  "folder": "orta otonom",
+  "folder": "orta otonom visionsuz",
   "previewStartingState": {
     "rotation": 0,
     "velocity": 0

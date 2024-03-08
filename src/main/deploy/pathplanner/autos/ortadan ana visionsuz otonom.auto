@@ -18,67 +18,9 @@
           }
         },
         {
-          "type": "parallel",
+          "type": "path",
           "data": {
-            "commands": [
-              {
-                "type": "named",
-                "data": {
-                  "name": "intakeTakeSequence"
-                }
-              },
-              {
-                "type": "sequential",
-                "data": {
-                  "commands": [
-                    {
-                      "type": "wait",
-                      "data": {
-                        "waitTime": 0.4
-                      }
-                    },
-                    {
-                      "type": "path",
-                      "data": {
-                        "pathName": "ittifak alt nota ileri ortadan"
-                      }
-                    }
-                  ]
-                }
-              }
-            ]
-          }
-        },
-        {
-          "type": "parallel",
-          "data": {
-            "commands": [
-              {
-                "type": "path",
-                "data": {
-                  "pathName": "ittifak alt nota geri ortadan"
-                }
-              },
-              {
-                "type": "sequential",
-                "data": {
-                  "commands": [
-                    {
-                      "type": "wait",
-                      "data": {
-                        "waitTime": 1.0
-                      }
-                    },
-                    {
-                      "type": "named",
-                      "data": {
-                        "name": "intakeShotSequence"
-                      }
-                    }
-                  ]
-                }
-              }
-            ]
+            "pathName": "ittifak 1.nota atis"
           }
         },
         {
@@ -104,13 +46,13 @@
                     {
                       "type": "wait",
                       "data": {
-                        "waitTime": 0.4
+                        "waitTime": 0.5
                       }
                     },
                     {
                       "type": "path",
                       "data": {
-                        "pathName": "ittifak orta nota ileri "
+                        "pathName": "ittifak 2.nota ileri ortadan "
                       }
                     }
                   ]
@@ -126,7 +68,7 @@
               {
                 "type": "path",
                 "data": {
-                  "pathName": "ittifak orta nota geri "
+                  "pathName": "ittifak 2.nota geri ortadan"
                 }
               },
               {
@@ -142,7 +84,7 @@
                     {
                       "type": "named",
                       "data": {
-                        "name": "intakeShotSequence"
+                        "name": "intakeFeedShotSequence"
                       }
                     }
                   ]
@@ -180,7 +122,7 @@
                     {
                       "type": "path",
                       "data": {
-                        "pathName": "ittifak ust nota ileri "
+                        "pathName": "ittifak 3.nota ileri ortadan "
                       }
                     }
                   ]
@@ -196,7 +138,7 @@
               {
                 "type": "path",
                 "data": {
-                  "pathName": "ittifak ust nota geri "
+                  "pathName": "ittifak 3.nota geri ortadan"
                 }
               },
               {
@@ -212,7 +154,7 @@
                     {
                       "type": "named",
                       "data": {
-                        "name": "intakeShotSequence"
+                        "name": "intakeFeedShotSequence"
                       }
                     }
                   ]
@@ -230,12 +172,12 @@
         {
           "type": "path",
           "data": {
-            "pathName": "orta taksi"
+            "pathName": "ortadan taksi"
           }
         }
       ]
     }
   },
-  "folder": null,
+  "folder": "ortadan",
   "choreoAuto": false
 }

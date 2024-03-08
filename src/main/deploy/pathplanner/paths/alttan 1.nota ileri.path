@@ -1,0 +1,86 @@
+{
+  "version": 1.0,
+  "waypoints": [
+    {
+      "anchor": {
+        "x": 0.7681227842330578,
+        "y": 4.29477853043544
+      },
+      "prevControl": null,
+      "nextControl": {
+        "x": 0.7680158584974931,
+        "y": 4.28036640833628
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 4.014447785612737,
+        "y": 2.014377035686786
+      },
+      "prevControl": {
+        "x": 2.6116137033734557,
+        "y": 2.6048038916373892
+      },
+      "nextControl": {
+        "x": 5.646513405481062,
+        "y": 1.3274708756184828
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 8.17,
+        "y": 0.7763970760908872
+      },
+      "prevControl": {
+        "x": 7.17,
+        "y": 0.7763970760908872
+      },
+      "nextControl": null,
+      "isLocked": false,
+      "linkedName": null
+    }
+  ],
+  "rotationTargets": [],
+  "constraintZones": [],
+  "eventMarkers": [
+    {
+      "name": "icine al",
+      "waypointRelativePos": 0.95,
+      "command": {
+        "type": "parallel",
+        "data": {
+          "commands": [
+            {
+              "type": "named",
+              "data": {
+                "name": "intakeTakeSequence"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "globalConstraints": {
+    "maxVelocity": 3.0,
+    "maxAcceleration": 3.0,
+    "maxAngularVelocity": 540.0,
+    "maxAngularAcceleration": 720.0
+  },
+  "goalEndState": {
+    "velocity": 0,
+    "rotation": 0,
+    "rotateFast": false
+  },
+  "reversed": false,
+  "folder": "alt otonom visionsuz",
+  "previewStartingState": {
+    "rotation": -58.21989852777398,
+    "velocity": 0
+  },
+  "useDefaultConstraints": true
+}

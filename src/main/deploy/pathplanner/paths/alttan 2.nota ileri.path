@@ -1,0 +1,86 @@
+{
+  "version": 1.0,
+  "waypoints": [
+    {
+      "anchor": {
+        "x": 0.7657292276617386,
+        "y": 4.3433273283969855
+      },
+      "prevControl": null,
+      "nextControl": {
+        "x": 0.7522957269434388,
+        "y": 4.349154837847481
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 6.63694082055429,
+        "y": 1.762654669603047
+      },
+      "prevControl": {
+        "x": 3.022285898849746,
+        "y": 1.2455243335004467
+      },
+      "nextControl": {
+        "x": 7.554810519205427,
+        "y": 1.8939696294106136
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 8.283265368130188,
+        "y": 2.3913441396086763
+      },
+      "prevControl": {
+        "x": 8.285829328776128,
+        "y": 2.408742282777007
+      },
+      "nextControl": null,
+      "isLocked": false,
+      "linkedName": null
+    }
+  ],
+  "rotationTargets": [],
+  "constraintZones": [],
+  "eventMarkers": [
+    {
+      "name": "feed",
+      "waypointRelativePos": 0.8,
+      "command": {
+        "type": "parallel",
+        "data": {
+          "commands": [
+            {
+              "type": "named",
+              "data": {
+                "name": "intakeTakeSequence"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "globalConstraints": {
+    "maxVelocity": 3.0,
+    "maxAcceleration": 3.0,
+    "maxAngularVelocity": 540.0,
+    "maxAngularAcceleration": 720.0
+  },
+  "goalEndState": {
+    "velocity": 0,
+    "rotation": 39.56,
+    "rotateFast": false
+  },
+  "reversed": false,
+  "folder": "alt otonom visionsuz",
+  "previewStartingState": {
+    "rotation": -60.380492303802924,
+    "velocity": 0
+  },
+  "useDefaultConstraints": true
+}
