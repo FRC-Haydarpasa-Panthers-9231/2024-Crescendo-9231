@@ -3,7 +3,6 @@ package frc.robot;
 import frc.robot.Constants.OperatorConstants;
 import frc.robot.commands.Intake.IntakeRoller;
 import frc.robot.commands.Shooter.ShooterRoller;
-import frc.robot.commands.sequence.IntakeFeedSequence;
 import frc.robot.commands.sequence.IntakeTakeSequence;
 import frc.robot.commands.sequence.IntakeFeedShotSequence;
 
