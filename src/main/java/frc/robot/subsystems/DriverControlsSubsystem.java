@@ -152,9 +152,6 @@ public class DriverControlsSubsystem extends SubsystemBase{
         driverController.setRumble(RumbleType.kBothRumble, speed);
     }
 
-    public boolean isFieldOrianted(){
-       return !driverController.getRightBumper();
-    }
 
     public void registerTriggers()
     {
@@ -163,7 +160,7 @@ public class DriverControlsSubsystem extends SubsystemBase{
         () -> MathUtil.applyDeadband(driverController.getLeftY(), OperatorConstants.LEFTY_DEADBAND),
         () -> MathUtil.applyDeadband(driverController.getLeftX(), OperatorConstants.LEFTX_DEADBAND),
         () ->  MathUtil.applyDeadband(driverController.getRightX(), OperatorConstants.RIGHTX_DEADBAND),
-        true);
+        ()->!driverController.getStartButton());
 
         swerveSubsystem.setDefaultCommand(driveFieldOrientedDirectAngle);
     // Intake
@@ -198,7 +195,7 @@ public class DriverControlsSubsystem extends SubsystemBase{
     // Shooter
     new Trigger(this::ShooterRoller).onTrue(new ShooterRoller(Constants.ShooterConstant.ROLLER_POWER))
                                         .onFalse(new ShooterRoller(0));
-new Trigger(this::IntakeTakeCommand).onTrue(new IntakeTakeSequence());
+    new Trigger(this::IntakeTakeCommand).onTrue(new IntakeTakeSequence());
     // Climber
     new Trigger(this::Climber1Positive).onTrue(new InstantCommand(()->m_climber.climber1Motor(Constants.ClimberConstant.CLIMBER_POWER)))
                                         .onFalse(new InstantCommand(()->m_climber.climber1Motor(0)));

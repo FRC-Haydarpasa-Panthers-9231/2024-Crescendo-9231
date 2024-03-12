@@ -2,6 +2,7 @@
 package frc.robot.subsystems;
 
 import java.io.File;
+import java.util.function.BooleanSupplier;
 import java.util.function.DoubleSupplier;
 
 import com.pathplanner.lib.auto.AutoBuilder;
@@ -79,7 +80,7 @@ public class SwerveSubsystem extends SubsystemBase {
 
 
 //MAVİ TARAFTA ÇALIŞIYOR
-  public Command driveCommand2(DoubleSupplier translationX, DoubleSupplier translationY, DoubleSupplier angularRotationX,boolean fieldOrianted)
+  public Command driveCommand2(DoubleSupplier translationX, DoubleSupplier translationY, DoubleSupplier angularRotationX,BooleanSupplier fieldOrianted)
   {
     return run(() -> {
       // Make the robot move
@@ -90,7 +91,7 @@ public class SwerveSubsystem extends SubsystemBase {
       swerveDrive.drive(new Translation2d(-translationX.getAsDouble() * swerveDrive.getMaximumVelocity()*isBlueAlliance,
                                           -translationY.getAsDouble() * swerveDrive.getMaximumVelocity()*isBlueAlliance),
                         -angularRotationX.getAsDouble() * swerveDrive.getMaximumAngularVelocity(),
-                        true,
+                        fieldOrianted.getAsBoolean(),
                         false);
     });
   }
