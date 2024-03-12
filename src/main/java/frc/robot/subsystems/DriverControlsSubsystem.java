@@ -176,8 +176,8 @@ public class DriverControlsSubsystem extends SubsystemBase{
     new Trigger(this::ResetGyro).onTrue(new InstantCommand(()->swerveSubsystem.zeroGyro()));
 
     //limlight disable
-    new Trigger(this::ShooterLimelightPos).onTrue(new InstantCommand(()->m_shooterPivot.changeLimelightActivation(true)));   
-     new Trigger(this::ShooterFixedPos).onTrue(new InstantCommand(()->m_shooterPivot.changeLimelightActivation(false)));
+    /*new Trigger(this::ShooterLimelightPos).onTrue(new InstantCommand(()->m_shooterPivot.changeLimelightActivation(true)));   
+     new Trigger(this::ShooterFixedPos).onTrue(new InstantCommand(()->m_shooterPivot.changeLimelightActivation(false)));*/
 
 
     new Trigger(this::IntakePivotPositive).onTrue(new InstantCommand(()->m_intakePivot.setPivotMotor(Constants.IntakeConstants.PIVOT_POWER)))

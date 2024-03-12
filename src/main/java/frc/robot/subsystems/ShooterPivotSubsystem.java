@@ -38,7 +38,7 @@ public class ShooterPivotSubsystem extends SubsystemBase {
         absoluteEncoder.reset();
 
         shooterPID=new PIDController(3,0,0);
-        PIDinitialize(0.965);
+        PIDinitialize(0.965); //0.965 amp 0.96 shooter
         SmartDashboard.putNumber("Shooter SetPoint",getAbsoluteDegree());
         
     }
@@ -54,11 +54,6 @@ public class ShooterPivotSubsystem extends SubsystemBase {
         PIDinitialize(degree);
     }
 
-   
-    public void changeLimelightActivation(boolean cond) {
-        
-        changeDegreeAim(0.965);
-    }
     public void setPivotMotor(double degree) {
         
         PivotMotor1.set(degree);
@@ -79,14 +74,14 @@ public class ShooterPivotSubsystem extends SubsystemBase {
         
         double newDegree = SmartDashboard.getNumber("Shooter SetPoint", 1.05);
         newDegree=PantherUtils.clamp(newDegree,0.95,1.05);
-        //if(newDegree != degreeAim)
-        //{
-        //    changeDegreeAim(newDegree);
-        //}
+        if(newDegree != degreeAim)
+        {
+            changeDegreeAim(newDegree);
+        }
         setPivotMotor(shooterPID.calculate(getAbsoluteDegree()));
 
 
-        changeDegreeAim(newDegree);
+        //changeDegreeAim(newDegree);
         SmartDashboard.putNumber("Limelight_Pose", 0.97-((LimelightHelpers.getTY("limelight")/400)));
         if((LimelightHelpers.getFiducialID("limelight")==4 ||LimelightHelpers.getFiducialID("limelight")==7 || LimelightHelpers.getFiducialID("limelight")==2) && isLimelightActive)
         {
