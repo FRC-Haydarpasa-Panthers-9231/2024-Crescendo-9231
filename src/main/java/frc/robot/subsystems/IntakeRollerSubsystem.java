@@ -27,9 +27,6 @@ public class IntakeRollerSubsystem extends SubsystemBase
     public IntakeRollerSubsystem() 
     {
         rollerMotor = new CANSparkMax(IntakeConstants.ROLLER_MOTOR_PORT, MotorType.kBrushless);
-        
-
-
 
         motorConfig();
     }
@@ -44,7 +41,7 @@ public class IntakeRollerSubsystem extends SubsystemBase
 
     public void setRollerMotor(double forward) {
         
-        rollerMotor.set(forward);
+        rollerMotor.setVoltage(forward);
     }
 
     
@@ -58,7 +55,6 @@ public class IntakeRollerSubsystem extends SubsystemBase
     @Override
     public void periodic()
     {
-        
         SmartDashboard.putBoolean("LimitW", getLimitSwitch());
     }
 

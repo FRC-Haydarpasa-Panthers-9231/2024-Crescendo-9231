@@ -19,6 +19,7 @@ import frc.robot.commands.Intake.IntakePivot;
 import frc.robot.commands.Intake.IntakeRoller;
 import frc.robot.commands.Shooter.ShooterPivot;
 import frc.robot.commands.Shooter.ShooterRoller;
+import frc.robot.commands.sequence.IntakeTakeSequence;
 
 
 public class DriverControlsSubsystem extends SubsystemBase{
@@ -91,7 +92,7 @@ public class DriverControlsSubsystem extends SubsystemBase{
 
     /*Shooter roller */
     public boolean ShooterRoller(){
-        return operatorController.getCrossButton();
+        return driverController.getRightBumper();
     }
 
     /*Climber */
@@ -121,27 +122,30 @@ public class DriverControlsSubsystem extends SubsystemBase{
     }
 
     public boolean IntakeAmpPose(){
-        return operatorController.getPOV()==0;
+        return driverController.getPOV()==0;
     }
 
    // public boolean shooterDownPID()
     //{
     //    return driverController.getPOV()==180;
     //}
+    public boolean IntakeTakeCommand(){
+        return driverController.getLeftBumper();
+    }
 
     public boolean IntakeGroundPose()
     {
-        return operatorController.getPOV()==90;
+        return driverController.getPOV()==90;
     }
 
     public boolean IntakeFeedPose()
     {
-        return operatorController.getPOV()==270;
+        return driverController.getPOV()==270;
     }
 
     public boolean IntakeStartPose()
     {
-        return operatorController.getPOV()==180;
+        return driverController.getPOV()==180;
     }
 
     public void setRumble(double speed){
@@ -159,7 +163,7 @@ public class DriverControlsSubsystem extends SubsystemBase{
         () -> MathUtil.applyDeadband(driverController.getLeftY(), OperatorConstants.LEFTY_DEADBAND),
         () -> MathUtil.applyDeadband(driverController.getLeftX(), OperatorConstants.LEFTX_DEADBAND),
         () ->  MathUtil.applyDeadband(driverController.getRightX(), OperatorConstants.RIGHTX_DEADBAND),
-        !driverController.getRightBumper());
+        true);
 
         swerveSubsystem.setDefaultCommand(driveFieldOrientedDirectAngle);
     // Intake
@@ -194,7 +198,7 @@ public class DriverControlsSubsystem extends SubsystemBase{
     // Shooter
     new Trigger(this::ShooterRoller).onTrue(new ShooterRoller(Constants.ShooterConstant.ROLLER_POWER))
                                         .onFalse(new ShooterRoller(0));
-
+new Trigger(this::IntakeTakeCommand).onTrue(new IntakeTakeSequence());
     // Climber
     new Trigger(this::Climber1Positive).onTrue(new InstantCommand(()->m_climber.climber1Motor(Constants.ClimberConstant.CLIMBER_POWER)))
                                         .onFalse(new InstantCommand(()->m_climber.climber1Motor(0)));

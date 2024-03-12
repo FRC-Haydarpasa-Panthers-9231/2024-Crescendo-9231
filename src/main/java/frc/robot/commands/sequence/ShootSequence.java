@@ -32,7 +32,7 @@ public class ShootSequence extends SequentialCommandGroup {
             new WaitCommand(1), //1 saniye bekle
             new InstantCommand(()->m_intakeRoller.setRollerMotor(Constants.IntakeConstants.AMP_SHOOT_POWER)) // intake roll out ver ve atış yap
         ),
-        new WaitCommand(2) // 2 saniye içinde komutlar bitmemişse hepsini bitir
+        new WaitCommand(2.5) // 2 saniye içinde komutlar bitmemişse hepsini bitir
       ),
       new WaitCommand(0.9), // 0.9 saniye bekle
       new InstantCommand(()->m_shooterRoller.setRollerMotor(0)), //shooter roller motorunu durdur

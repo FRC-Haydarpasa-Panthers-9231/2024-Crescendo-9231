@@ -1,0 +1,37 @@
+{
+  "version": 1.0,
+  "startingPose": {
+    "position": {
+      "x": 1.3023087957730821,
+      "y": 3.325877579001948
+    },
+    "rotation": 0
+  },
+  "command": {
+    "type": "sequential",
+    "data": {
+      "commands": [
+        {
+          "type": "named",
+          "data": {
+            "name": "intakeTakeSequence"
+          }
+        },
+        {
+          "type": "wait",
+          "data": {
+            "waitTime": 0.9
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "intakeFeedShotSequence"
+          }
+        }
+      ]
+    }
+  },
+  "folder": null,
+  "choreoAuto": false
+}

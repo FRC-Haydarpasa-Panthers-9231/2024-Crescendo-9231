@@ -16,26 +16,11 @@ public class Vision extends SubsystemBase
     }
 
 
-    public double estimateDistance(){
-
-        double targetOffsetAngle_Vertical = LimelightHelpers.getTY("limelight");
-        double limelightMountAngleDegrees = 46.0; 
-        double limelightLensHeightInches = 5.611811023622; 
-        double goalHeightInches = 80.708661417323; 
-        double angleToGoalDegrees = limelightMountAngleDegrees + targetOffsetAngle_Vertical;
-        double angleToGoalRadians = angleToGoalDegrees * (3.14159 / 180.0);
-        double distanceFromLimelightToGoalInches = (goalHeightInches - limelightLensHeightInches) / Math.tan(angleToGoalRadians);
-
-
-
-        return distanceFromLimelightToGoalInches;
-    }
 
     @Override 
     public void periodic()
     {
         LimelightHelpers.PoseEstimate limelightMeasurement = LimelightHelpers.getBotPoseEstimate_wpiBlue("limelight");
-        SmartDashboard.getNumber("distance", estimateDistance());
         if(LimelightHelpers.getTV("limelight"))
         {
             m_drive.addVisionReading(limelightMeasurement.pose,limelightMeasurement.timestampSeconds);

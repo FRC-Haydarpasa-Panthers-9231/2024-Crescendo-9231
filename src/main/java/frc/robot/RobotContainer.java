@@ -101,7 +101,7 @@ public class RobotContainer {
     NamedCommands.registerCommand("intakeFeedShotSequence", new IntakeFeedShotSequence());
 
 
-    autoChooser = AutoBuilder.buildAutoChooser("taksi");
+    autoChooser = AutoBuilder.buildAutoChooser("practice");
     SmartDashboard.putData("Auto Mode", autoChooser);
   }
 

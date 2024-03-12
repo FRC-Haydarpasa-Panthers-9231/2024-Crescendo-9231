@@ -4,6 +4,7 @@ package frc.robot.commands.sequence;
 import edu.wpi.first.math.geometry.Rotation2d;
 import edu.wpi.first.wpilibj2.command.InstantCommand;
 import edu.wpi.first.wpilibj2.command.ParallelCommandGroup;
+import edu.wpi.first.wpilibj2.command.ParallelRaceGroup;
 import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 import edu.wpi.first.wpilibj2.command.WaitCommand;
 import frc.robot.Constants;
@@ -16,7 +17,8 @@ public class IntakeTakeSequence extends SequentialCommandGroup {
     m_intakePivot=IntakePivotSubsystem.getInstance();
 
     addCommands(
-new SequentialCommandGroup(
+new ParallelRaceGroup(
+  new SequentialCommandGroup(
        new ParallelCommandGroup(
         new InstantCommand(()->m_intakePivot.pivotSet(Rotation2d.fromDegrees(210))), //intake bottom pozisyonuna getir
         new SequentialCommandGroup(
@@ -25,9 +27,11 @@ new SequentialCommandGroup(
         )
         ),
         new InstantCommand(()->m_intakePivot.pivotSet(Rotation2d.fromDegrees(10))) // feedTop pozisyonuna getir
-        )
+        ),
+        new WaitCommand(6)
 
-    );
+    )
+);
 
    
   }
