@@ -17,7 +17,6 @@ public class IntakeTakeSequence extends SequentialCommandGroup {
     m_intakePivot=IntakePivotSubsystem.getInstance();
 
     addCommands(
-new ParallelRaceGroup(
   new SequentialCommandGroup(
        new ParallelCommandGroup(
         new InstantCommand(()->m_intakePivot.pivotSet(Rotation2d.fromDegrees(210))), //intake bottom pozisyonuna getir
@@ -27,10 +26,7 @@ new ParallelRaceGroup(
         )
         ),
         new InstantCommand(()->m_intakePivot.pivotSet(Rotation2d.fromDegrees(10))) // feedTop pozisyonuna getir
-        ),
-        new WaitCommand(6)
-
-    )
+        ).withTimeout(6)
 );
 
    

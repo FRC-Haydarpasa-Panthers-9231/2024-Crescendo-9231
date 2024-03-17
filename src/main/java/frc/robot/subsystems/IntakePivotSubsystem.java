@@ -46,7 +46,7 @@ public class IntakePivotSubsystem extends SubsystemBase
 
         boreEncoder = pivotMotor.getAlternateEncoder(Type.kQuadrature,8192);
 
-        SmartDashboard.putNumber("intakeDegree",getAbsoluteEncoder());
+        
         motorConfig();
     }
 
@@ -90,12 +90,6 @@ public class IntakePivotSubsystem extends SubsystemBase
         pivotMotor.set(forward);
     }
 
-
-    public void resetAbsoluteEncoder()
-    {
-    
-        SmartDashboard.putBoolean("resetlendi", true);
-    }
 
     public double getAbsoluteEncoder()
     {

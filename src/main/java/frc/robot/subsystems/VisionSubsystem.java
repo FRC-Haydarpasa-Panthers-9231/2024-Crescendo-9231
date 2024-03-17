@@ -4,13 +4,13 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.LimelightHelpers;
 
-public class Vision extends SubsystemBase 
+public class VisionSubsystem extends SubsystemBase 
 {
-    static Vision instance;
+    static VisionSubsystem instance;
 
     SwerveSubsystem m_drive;
     
-    public Vision()
+    public VisionSubsystem()
     {
         m_drive=SwerveSubsystem.getInstance();
     }
@@ -20,8 +20,10 @@ public class Vision extends SubsystemBase
     @Override 
     public void periodic()
     {
+        double error=LimelightHelpers.getTY("limelight");
+        SmartDashboard.putNumber("LimelightTx", error);
         LimelightHelpers.PoseEstimate limelightMeasurement = LimelightHelpers.getBotPoseEstimate_wpiBlue("limelight");
-        if(LimelightHelpers.getTV("limelight"))
+        if(limelightMeasurement.tagCount >= 2)
         {
             m_drive.addVisionReading(limelightMeasurement.pose,limelightMeasurement.timestampSeconds);
         }
@@ -32,11 +34,11 @@ public class Vision extends SubsystemBase
         return 0;
     }
 
-    public Vision getInstance()
+    public static VisionSubsystem getInstance()
     {
         if(instance == null)
         {
-            instance= new Vision();
+            instance= new VisionSubsystem();
         }
         return instance;
     }

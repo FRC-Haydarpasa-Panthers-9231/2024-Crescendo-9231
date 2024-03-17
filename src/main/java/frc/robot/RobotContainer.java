@@ -15,6 +15,8 @@ import frc.robot.subsystems.IntakeRollerSubsystem;
 import frc.robot.subsystems.IntakePivotSubsystem;
 import frc.robot.subsystems.ShooterPivotSubsystem;
 import frc.robot.subsystems.ShooterRollerSubsystem;
+import frc.robot.subsystems.VisionSubsystem;
+import frc.robot.subsystems.VisionSubsystem;
 
 import java.io.File;
 import com.pathplanner.lib.auto.AutoBuilder;
@@ -50,6 +52,8 @@ public class RobotContainer {
   private final IntakeRollerSubsystem m_intakeRoller;
   private final IntakePivotSubsystem m_intakePivot;
 
+  private final VisionSubsystem m_vision;
+
   private final SendableChooser<Command> autoChooser;
   private  final DriverControlsSubsystem driverControlsSubsystem;
 
@@ -74,7 +78,7 @@ public class RobotContainer {
 
     driverControlsSubsystem = DriverControlsSubsystem.getInstance();
     
-
+    m_vision = VisionSubsystem.getInstance();
     
     driverControlsSubsystem.registerTriggers();
 
@@ -92,7 +96,7 @@ public class RobotContainer {
 
     // shooter roller
 
-    NamedCommands.registerCommand("shooterRoller", new ShooterRoller(Constants.ShooterConstant.ROLLER_POWER));
+    NamedCommands.registerCommand("shooterRoller", new ShooterRoller(Constants.ShooterConstant.SPEAKER_POWER));
     NamedCommands.registerCommand("shooterRollerStop", new InstantCommand(()->m_shooterRoller.setRollerMotor(0)));
 
 // sequence

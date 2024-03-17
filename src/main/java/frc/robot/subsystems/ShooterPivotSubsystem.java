@@ -47,7 +47,7 @@ public class ShooterPivotSubsystem extends SubsystemBase {
         degreeAim = degree;
         shooterPID.reset();
         shooterPID.setSetpoint(degree);
-        shooterPID.setTolerance(0.01);
+        shooterPID.setTolerance(0.001);
         
     }
     public void changeDegreeAim(double degree) {
@@ -79,10 +79,10 @@ public class ShooterPivotSubsystem extends SubsystemBase {
             changeDegreeAim(newDegree);
         }
         setPivotMotor(shooterPID.calculate(getAbsoluteDegree()));
-
+        
 
         //changeDegreeAim(newDegree);
-        SmartDashboard.putNumber("Limelight_Pose", 0.97-((LimelightHelpers.getTY("limelight")/400)));
+        //SmartDashboard.putNumber("Limelight_Pose", 0.97-((LimelightHelpers.getTY("limelight")/400)));
         if((LimelightHelpers.getFiducialID("limelight")==4 ||LimelightHelpers.getFiducialID("limelight")==7 || LimelightHelpers.getFiducialID("limelight")==2) && isLimelightActive)
         {
             
@@ -100,10 +100,11 @@ public class ShooterPivotSubsystem extends SubsystemBase {
         return instance;
     }
 
+    
     public static final InterpolatingDoubleTreeMap DISTANCE_TO_ANGLE_MAP = new InterpolatingDoubleTreeMap();
 
     static {
-        //DISTANCE_TO_ANGLE_MAP.put(1.25, ArmConstants.kSUBWOOFER);
+        DISTANCE_TO_ANGLE_MAP.put(16.89, 0.96);  
         //DISTANCE_TO_ANGLE_MAP.put(2.2, ArmConstants.kOffset - 0.075);
         //DISTANCE_TO_ANGLE_MAP.put(3.0, ArmConstants.kOffset - 0.058);
         //DISTANCE_TO_ANGLE_MAP.put(4.1, ArmConstants.kOffset - 0.038);

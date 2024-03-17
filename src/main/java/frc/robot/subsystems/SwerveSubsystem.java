@@ -86,8 +86,8 @@ public class SwerveSubsystem extends SubsystemBase {
       // Make the robot move
       DriverStation.Alliance color;
 	    color = DriverStation.getAlliance().get();
-      int isBlueAlliance= DriverStation.Alliance.Blue==color? 1:-1;
-      SmartDashboard.putNumber("Joystick", angularRotationX.getAsDouble());
+      int isBlueAlliance= ((DriverStation.Alliance.Red==color)&& fieldOrianted.getAsBoolean()==true )? -1:1;
+      //SmartDashboard.putNumber("Joystick", angularRotationX.getAsDouble());
       swerveDrive.drive(new Translation2d(-translationX.getAsDouble() * swerveDrive.getMaximumVelocity()*isBlueAlliance,
                                           -translationY.getAsDouble() * swerveDrive.getMaximumVelocity()*isBlueAlliance),
                         -angularRotationX.getAsDouble() * swerveDrive.getMaximumAngularVelocity(),

@@ -18,7 +18,7 @@ public final class Constants {
     "i": 0,
     "d": 0.01
  */  
-  public static final double MaxModuleSpeed =4;
+  public static final double MaxModuleSpeed =5.3;
   public static final double driveBaseRadius = 0.51;
 
  public static class PIDConstants{
@@ -29,9 +29,10 @@ public final class Constants {
   public static class OperatorConstants {
     public static final int kDriverControllerPort = 0;
     public static final int kOperatorControllerPort=1;
-    public static final double LEFTX_DEADBAND = 0.2;
-    public static final double LEFTY_DEADBAND = 0.2;
-    public static final double RIGHTX_DEADBAND = 0.2;
+    public static final int kPracticeControllerPort=2;
+    public static final double LEFTX_DEADBAND = 0.1;
+    public static final double LEFTY_DEADBAND = 0.1;
+    public static final double RIGHTX_DEADBAND = 0.1;
   }
 
   public static class IntakeConstants {
@@ -52,7 +53,8 @@ public final class Constants {
     public static final int PIVOT_MOTOR1_PORT= 16;
     public static final int PIVOT_MOTOR2_PORT= 17;
     public static final double PIVOT_POWER=0.5;
-    public static final double ROLLER_POWER=2; //11.5 speaker 2 amfi
+    public static final double AMP_POWER=2.5; //11.5 speaker 2 amfi
+    public static final double SPEAKER_POWER=11.5;
   }
 
   public static class ClimberConstant
