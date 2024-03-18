@@ -25,7 +25,7 @@ public class VisionSubsystem extends SubsystemBase
         LimelightHelpers.PoseEstimate limelightMeasurement = LimelightHelpers.getBotPoseEstimate_wpiBlue("limelight");
         if(limelightMeasurement.tagCount >= 2)
         {
-            m_drive.addVisionReading(limelightMeasurement.pose,limelightMeasurement.timestampSeconds);
+            //m_drive.addVisionReading(limelightMeasurement.pose,limelightMeasurement.timestampSeconds);
         }
     }
 

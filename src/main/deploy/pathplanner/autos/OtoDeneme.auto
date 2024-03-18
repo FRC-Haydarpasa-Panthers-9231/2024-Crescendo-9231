@@ -22,24 +22,6 @@
           "data": {
             "pathName": "Ortadan_uste"
           }
-        },
-        {
-          "type": "path",
-          "data": {
-            "pathName": "Ustten_Ortaya"
-          }
-        },
-        {
-          "type": "path",
-          "data": {
-            "pathName": "Ortadan_alta"
-          }
-        },
-        {
-          "type": "path",
-          "data": {
-            "pathName": "Alttan_Ortaya"
-          }
         }
       ]
     }

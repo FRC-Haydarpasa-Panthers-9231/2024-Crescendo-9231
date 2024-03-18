@@ -2,8 +2,8 @@
   "version": 1.0,
   "startingPose": {
     "position": {
-      "x": 1.3974501410147069,
-      "y": 5.575563767875143
+      "x": 1.325730468864645,
+      "y": 5.492382339971527
     },
     "rotation": 0
   },
@@ -12,15 +12,9 @@
     "data": {
       "commands": [
         {
-          "type": "named",
-          "data": {
-            "name": "shooterRoller"
-          }
-        },
-        {
           "type": "path",
           "data": {
-            "pathName": "deneysel"
+            "pathName": "Dönme"
           }
         }
       ]

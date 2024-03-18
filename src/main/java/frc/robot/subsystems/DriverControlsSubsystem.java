@@ -24,6 +24,7 @@ public class DriverControlsSubsystem extends SubsystemBase{
     private ClimberSubsystem m_climber;
     private IntakePivotSubsystem m_intakePivot;
     private IntakeRollerSubsystem m_intakeRoller;
+    private ShooterPivotSubsystem m_shooterPivot;
     private SwerveSubsystem swerveSubsystem;
     private XboxController driverController;
     private PS4Controller operatorController;
@@ -41,6 +42,7 @@ public class DriverControlsSubsystem extends SubsystemBase{
         m_intakeRoller=IntakeRollerSubsystem.getInstance();
         m_intakePivot=IntakePivotSubsystem.getInstance();
         swerveSubsystem=SwerveSubsystem.getInstance();
+        m_shooterPivot=ShooterPivotSubsystem.getInstance();
         speedRate =1;
     }
 
@@ -60,11 +62,14 @@ public class DriverControlsSubsystem extends SubsystemBase{
 
     /*Intake roller */
     public boolean IntakeRollerIn(){
-        return driverController.getRightTriggerAxis()>0;
+        return /*driverController.getRightTriggerAxis()>0*/
+        operatorController.getCircleButton();
     }
     
     public boolean IntakeRollerOut(){
-        return driverController.getLeftTriggerAxis()>0;
+        return /*driverController.getLeftTriggerAxis()>0*/
+        operatorController.getPOV()==0;
+        
     }
 
     public boolean IntakeRolllerZero()
@@ -74,12 +79,12 @@ public class DriverControlsSubsystem extends SubsystemBase{
 
     public boolean ResetGyro()
     {
-        return practiceController.getXButton();
+        return driverController.getPOV()==0;
     }
 
     /*Shooter roller */
     public boolean SpeakerShootRoller(){
-        return driverController.getRightBumper();
+        return operatorController.getCrossButton();
     }
      public boolean AmpShoot()
     {
@@ -96,7 +101,7 @@ public class DriverControlsSubsystem extends SubsystemBase{
 
 
     public boolean ShooterFixedPos(){
-        return operatorController.getTriangleButton();
+        return operatorController.getOptionsButton();
     }
 
     public boolean Climber2Positive()
@@ -112,31 +117,36 @@ public class DriverControlsSubsystem extends SubsystemBase{
    
   
     public boolean IntakeTakeCommand(){
-        return driverController.getLeftBumper();
+        return operatorController.getTriangleButton();
     }
 
       public boolean IntakeAmpPose(){
-        return driverController.getPOV()==0;
+        return false/*operatorController.getPOV()==0*/;
     }
 
     public boolean IntakeGroundPose()
     {
-        return driverController.getPOV()==90;
+        return operatorController.getPOV()==270;
     }
 
     public boolean IntakeFeedPose()
     {
-        return driverController.getPOV()==270;
+        return operatorController.getPOV()==90;
     }
 
     public boolean IntakeStartPose()
     {
-        return driverController.getPOV()==180;
+        return operatorController.getPOV()==180;
     }
 
     public boolean slowMod()
     {
         return practiceController.getYButton();
+    }
+
+    public boolean limelightPose()
+    {
+        return operatorController.getSquareButton();
     }
 
 
@@ -148,7 +158,7 @@ public class DriverControlsSubsystem extends SubsystemBase{
         () -> MathUtil.applyDeadband(driverController.getLeftY(), OperatorConstants.LEFTY_DEADBAND)*speedRate,
         () -> MathUtil.applyDeadband(driverController.getLeftX(), OperatorConstants.LEFTX_DEADBAND)*speedRate,
         () ->  MathUtil.applyDeadband(driverController.getRightX(), OperatorConstants.RIGHTX_DEADBAND),
-        ()->!driverController.getYButton());
+        ()->!driverController.getLeftBumper());
 
         swerveSubsystem.setDefaultCommand(driveFieldOrientedDirectAngle);
     // Intake
@@ -182,9 +192,9 @@ public class DriverControlsSubsystem extends SubsystemBase{
                                         
     new Trigger(this::IntakeGroundPose).onTrue(new InstantCommand(()->m_intakePivot.pivotSet(Rotation2d.fromDegrees(210))));
                                         
-     new Trigger(this::IntakeFeedPose).onTrue(new InstantCommand(()->m_intakePivot.pivotSet(Rotation2d.fromDegrees(10))));
+     new Trigger(this::IntakeFeedPose).onTrue(new InstantCommand(()->m_intakePivot.pivotSet(Rotation2d.fromDegrees(0))));
 
-    new Trigger(this::IntakeStartPose).onTrue(new InstantCommand(()->m_intakePivot.pivotSet(Rotation2d.fromDegrees(0))));
+    new Trigger(this::IntakeStartPose).onTrue(new InstantCommand(()->m_intakePivot.pivotSet(Rotation2d.fromDegrees(-5))));
                                         
 
     // Command 
@@ -192,7 +202,10 @@ public class DriverControlsSubsystem extends SubsystemBase{
                                 .onFalse(new InstantCommand(()->speedRate=1));
     new Trigger(this::IntakeTakeCommand).onTrue(new IntakeTakeSequence());
 
+    //Shooter Pose
+    new Trigger(this::limelightPose).onTrue(new InstantCommand(()->m_shooterPivot.limelightPos()));
 
+    new Trigger(this::ShooterFixedPos).onTrue(new InstantCommand(()->m_shooterPivot.fixedPos()));
     
     }
     public static DriverControlsSubsystem getInstance()

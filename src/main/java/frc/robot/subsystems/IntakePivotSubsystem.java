@@ -56,7 +56,7 @@ public class IntakePivotSubsystem extends SubsystemBase
 
         pivotMotor.setIdleMode(IdleMode.kBrake);
 
-
+        
         pivotController.setP(Constants.IntakeConstants.INTAKE_P);
         pivotController.setI(Constants.IntakeConstants.INTAKE_I);
         pivotController.setD(Constants.IntakeConstants.INTAKE_D);
@@ -68,6 +68,7 @@ public class IntakePivotSubsystem extends SubsystemBase
 
         boreEncoder.setPositionConversionFactor(180);
         pivotMotor.setInverted(true);
+        boreEncoder.setPosition(-5);
         //pivotSet(Rotation2d.fromDegrees(0));
     }
 
@@ -88,6 +89,10 @@ public class IntakePivotSubsystem extends SubsystemBase
     public void setPivotMotor(double forward) {
         
         pivotMotor.set(forward);
+    }
+
+    public void setPivotVoltage(double volt){
+        pivotMotor.setVoltage(-kG);
     }
 
 

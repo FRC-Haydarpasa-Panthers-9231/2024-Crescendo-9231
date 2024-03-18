@@ -22,9 +22,9 @@ public final class Constants {
   public static final double driveBaseRadius = 0.51;
 
  public static class PIDConstants{
-      public static final double kSwerveAutoPIDP = 0.7;
+      public static final double kSwerveAutoPIDP = 15;
       public static final double kSwerveAutoPIDI = 0;
-      public static final double kSwerveAutoPIDD = 0;
+      public static final double kSwerveAutoPIDD = 0.1;
   }
   public static class OperatorConstants {
     public static final int kDriverControllerPort = 0;
@@ -41,9 +41,9 @@ public final class Constants {
     public static final double PIVOT_POWER = 0.3;
     public static final double AMP_SHOOT_POWER = 6.05;
     public static final double ROLLER_POWER = 8.5;
-    public static final double INTAKE_P=0.0085;
+    public static final double INTAKE_P=0.008;
     public static final double INTAKE_I=0.00;
-    public static final double INTAKE_D=0.00;
+    public static final double INTAKE_D=0.0005;
     public static final int kCPR=8192;
   }
 

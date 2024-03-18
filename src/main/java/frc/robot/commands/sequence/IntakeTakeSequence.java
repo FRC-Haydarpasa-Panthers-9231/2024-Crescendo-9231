@@ -19,13 +19,13 @@ public class IntakeTakeSequence extends SequentialCommandGroup {
     addCommands(
   new SequentialCommandGroup(
        new ParallelCommandGroup(
-        new InstantCommand(()->m_intakePivot.pivotSet(Rotation2d.fromDegrees(210))), //intake bottom pozisyonuna getir
+        new InstantCommand(()->m_intakePivot.pivotSet(Rotation2d.fromDegrees(200))), //intake bottom pozisyonuna getir
         new SequentialCommandGroup(
           new WaitCommand(0.5), // yarım saniye bekle
             new IntakeRoller(-Constants.IntakeConstants.ROLLER_POWER) // içeri nota al(limit switchden dolayı içeri alınca bitmesi lazım.)
         )
         ),
-        new InstantCommand(()->m_intakePivot.pivotSet(Rotation2d.fromDegrees(10))) // feedTop pozisyonuna getir
+        new InstantCommand(()->m_intakePivot.pivotSet(Rotation2d.fromDegrees(0))) // feedTop pozisyonuna getir
         ).withTimeout(6)
 );
 

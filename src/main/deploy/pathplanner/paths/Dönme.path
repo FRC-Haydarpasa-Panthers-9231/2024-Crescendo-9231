@@ -3,38 +3,32 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 1.34,
-        "y": 5.54
+        "x": 1.3207438415602815,
+        "y": 5.499057826760182
       },
       "prevControl": null,
       "nextControl": {
-        "x": 1.3377299021645108,
-        "y": 5.531369417831561
+        "x": 1.3173649564038334,
+        "y": 5.491890145454253
       },
       "isLocked": false,
       "linkedName": null
     },
     {
       "anchor": {
-        "x": 2.883271729453586,
-        "y": 6.9679477447399965
+        "x": 2.443444355697905,
+        "y": 5.529401083899037
       },
       "prevControl": {
-        "x": 2.8715608929078043,
-        "y": 6.9593171625715575
+        "x": 2.4445092445236845,
+        "y": 5.524065443927179
       },
       "nextControl": null,
       "isLocked": false,
       "linkedName": null
     }
   ],
-  "rotationTargets": [
-    {
-      "waypointRelativePos": 0.45,
-      "rotationDegrees": 45.24079363499436,
-      "rotateFast": false
-    }
-  ],
+  "rotationTargets": [],
   "constraintZones": [],
   "eventMarkers": [],
   "globalConstraints": {
@@ -45,11 +39,11 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": 45.46580908276504,
+    "rotation": 90.0,
     "rotateFast": false
   },
   "reversed": false,
-  "folder": "orta otonom visionsuz",
+  "folder": "4luoto",
   "previewStartingState": {
     "rotation": 0,
     "velocity": 0
