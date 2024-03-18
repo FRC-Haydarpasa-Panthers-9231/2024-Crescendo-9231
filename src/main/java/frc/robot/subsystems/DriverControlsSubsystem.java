@@ -62,13 +62,12 @@ public class DriverControlsSubsystem extends SubsystemBase{
 
     /*Intake roller */
     public boolean IntakeRollerIn(){
-        return /*driverController.getRightTriggerAxis()>0*/
+        return 
         operatorController.getCircleButton();
     }
     
     public boolean IntakeRollerOut(){
-        return /*driverController.getLeftTriggerAxis()>0*/
-        operatorController.getPOV()==0;
+        return driverController.getRightBumper();
         
     }
 
@@ -84,11 +83,11 @@ public class DriverControlsSubsystem extends SubsystemBase{
 
     /*Shooter roller */
     public boolean SpeakerShootRoller(){
-        return operatorController.getCrossButton();
+        return driverController.getRightTriggerAxis() > 0;
     }
      public boolean AmpShoot()
     {
-        return practiceController.getAButton();
+        return driverController.getLeftTriggerAxis() > 0;
     }
 
     /*Climber */
@@ -117,11 +116,11 @@ public class DriverControlsSubsystem extends SubsystemBase{
    
   
     public boolean IntakeTakeCommand(){
-        return operatorController.getTriangleButton();
+        return driverController.getXButton();
     }
 
       public boolean IntakeAmpPose(){
-        return false/*operatorController.getPOV()==0*/;
+        return operatorController.getPOV()==0;
     }
 
     public boolean IntakeGroundPose()
@@ -141,7 +140,7 @@ public class DriverControlsSubsystem extends SubsystemBase{
 
     public boolean slowMod()
     {
-        return practiceController.getYButton();
+        return driverController.getLeftBumper();
     }
 
     public boolean limelightPose()
