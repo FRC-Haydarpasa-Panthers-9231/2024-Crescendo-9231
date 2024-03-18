@@ -177,7 +177,7 @@ public class DriverControlsSubsystem extends SubsystemBase{
                                 .onFalse((new ShooterRoller(0)));
 
     // Climber
-    new Trigger(this::Climber1Positive).onTrue(new InstantCommand(()->m_climber.climber1Motor(Constants.ClimberConstant.CLIMBER_POWER)))
+   /* new Trigger(this::Climber1Positive).onTrue(new InstantCommand(()->m_climber.climber1Motor(Constants.ClimberConstant.CLIMBER_POWER)))
                                         .onFalse(new InstantCommand(()->m_climber.climber1Motor(0)));
     new Trigger(this::Climber1Negative).onTrue(new InstantCommand(()->m_climber.climber1Motor(-Constants.ClimberConstant.CLIMBER_POWER)))
                                         .onFalse(new InstantCommand(()->m_climber.climber1Motor(0)));
@@ -185,7 +185,7 @@ public class DriverControlsSubsystem extends SubsystemBase{
                                         .onFalse(new InstantCommand(()->m_climber.climber2Motor(0)));
     new Trigger(this::Climber2Negative).onTrue(new InstantCommand(()->m_climber.climber2Motor(-Constants.ClimberConstant.CLIMBER_POWER)))
                                         .onFalse(new InstantCommand(()->m_climber.climber2Motor(0)));
-
+*/
     // intake pose
     new Trigger(this::IntakeAmpPose).onTrue(new InstantCommand(()->m_intakePivot.pivotSet(Rotation2d.fromDegrees(90))));
                                         
