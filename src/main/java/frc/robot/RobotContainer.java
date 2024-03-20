@@ -5,6 +5,7 @@ import frc.robot.commands.Intake.IntakeRoller;
 import frc.robot.commands.Shooter.ShooterRoller;
 import frc.robot.commands.sequence.IntakeTakeSequence;
 import frc.robot.commands.sequence.ShootSequancePermaRoller;
+import frc.robot.commands.sequence.AutoIntakeSequence;
 import frc.robot.commands.sequence.AutoOuttakeSequence;
 import frc.robot.commands.sequence.IntakeFeedShotSequence;
 
@@ -103,10 +104,11 @@ public class RobotContainer {
 
 // sequence
     NamedCommands.registerCommand("shootSequence", new ShootSequence());
-    NamedCommands.registerCommand("intakeTakeSequence", new IntakeTakeSequence());
+    NamedCommands.registerCommand("intakeTakeSequence", new AutoIntakeSequence());
     NamedCommands.registerCommand("intakeFeedShotSequence", new IntakeFeedShotSequence());
     NamedCommands.registerCommand("AutoOuttakeSequence", new AutoOuttakeSequence());
     NamedCommands.registerCommand("ShootSequancePermaRoller", new ShootSequancePermaRoller());
+
 
     autoChooser = AutoBuilder.buildAutoChooser("Enes");
     SmartDashboard.putData("Auto Mode", autoChooser);

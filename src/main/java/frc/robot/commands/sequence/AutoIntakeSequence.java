@@ -1,4 +1,3 @@
-
 package frc.robot.commands.sequence;
 
 import edu.wpi.first.math.geometry.Rotation2d;
@@ -11,9 +10,9 @@ import frc.robot.Constants;
 import frc.robot.commands.Intake.IntakeRoller;
 import frc.robot.subsystems.IntakePivotSubsystem;
 
-public class IntakeTakeSequence extends SequentialCommandGroup {
+public class AutoIntakeSequence extends SequentialCommandGroup {
     private IntakePivotSubsystem m_intakePivot;
-  public IntakeTakeSequence() {
+  public AutoIntakeSequence() {
     m_intakePivot=IntakePivotSubsystem.getInstance();
 
     addCommands(
@@ -24,7 +23,7 @@ public class IntakeTakeSequence extends SequentialCommandGroup {
           new WaitCommand(0.5), // yarım saniye bekle
             new IntakeRoller(-Constants.IntakeConstants.ROLLER_POWER) // içeri nota al(limit switchden dolayı içeri alınca bitmesi lazım.)
         )
-        ).withTimeout(60),
+        ).withTimeout(4),
         new InstantCommand(()->m_intakePivot.pivotSet(Rotation2d.fromDegrees(0))) // feedTop pozisyonuna getir
         )
 );

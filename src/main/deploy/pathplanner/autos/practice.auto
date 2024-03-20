@@ -2,34 +2,15 @@
   "version": 1.0,
   "startingPose": {
     "position": {
-      "x": 1.3023087957730821,
-      "y": 3.325877579001948
+      "x": 1.1032245744947966,
+      "y": 3.6069376561007047
     },
-    "rotation": 0
+    "rotation": -47.64254529406477
   },
   "command": {
     "type": "sequential",
     "data": {
-      "commands": [
-        {
-          "type": "named",
-          "data": {
-            "name": "intakeTakeSequence"
-          }
-        },
-        {
-          "type": "wait",
-          "data": {
-            "waitTime": 4.0
-          }
-        },
-        {
-          "type": "named",
-          "data": {
-            "name": "intakeFeedShotSequence"
-          }
-        }
-      ]
+      "commands": []
     }
   },
   "folder": null,

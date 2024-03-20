@@ -54,6 +54,12 @@
           "data": {
             "pathName": "yandan_alta"
           }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "shootSequence"
+          }
         }
       ]
     }

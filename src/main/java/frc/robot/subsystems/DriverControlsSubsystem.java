@@ -189,10 +189,10 @@ public class DriverControlsSubsystem extends SubsystemBase{
     // intake pose
     new Trigger(this::IntakeAmpPose).onTrue(new InstantCommand(()->m_intakePivot.pivotSet(Rotation2d.fromDegrees(90))));
                                         
-    new Trigger(this::IntakeGroundPose).onTrue(new InstantCommand(()->m_intakePivot.pivotSet(Rotation2d.fromDegrees(210))));
+    new Trigger(this::IntakeGroundPose).onTrue(new InstantCommand(()->m_intakePivot.pivotSet(Rotation2d.fromDegrees(204))));
                                         
-     new Trigger(this::IntakeFeedPose).onTrue(new InstantCommand(()->m_intakeRoller.setRollerMotor(0)).andThen(new InstantCommand(()->m_intakePivot.pivotSet(Rotation2d.fromDegrees(0)))));
-    new Trigger(this::IntakeStartPose).onTrue(new InstantCommand(()->m_intakeRoller.setRollerMotor(0)).andThen(new InstantCommand(()->m_intakePivot.pivotSet(Rotation2d.fromDegrees(-5)))));
+    new Trigger(this::IntakeFeedPose).onTrue(new InstantCommand(()->m_intakePivot.pivotSet(Rotation2d.fromDegrees(0))));
+    new Trigger(this::IntakeStartPose).onTrue(new InstantCommand(()->m_intakePivot.pivotSet(Rotation2d.fromDegrees(-5))));
                                         
 
     // Command 
