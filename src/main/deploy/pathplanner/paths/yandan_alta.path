@@ -3,38 +3,32 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 1.34,
-        "y": 5.54
+        "x": 2.48,
+        "y": 4.07
       },
       "prevControl": null,
       "nextControl": {
-        "x": 1.3377299021645108,
-        "y": 5.531369417831561
+        "x": 2.4701330571891913,
+        "y": 4.060133057189192
       },
       "isLocked": false,
       "linkedName": null
     },
     {
       "anchor": {
-        "x": 2.883271729453586,
-        "y": 6.9679477447399965
+        "x": 0.7319122330552369,
+        "y": 4.371055665188254
       },
       "prevControl": {
-        "x": 2.8715608929078043,
-        "y": 6.9593171625715575
+        "x": 0.7319122330552369,
+        "y": 4.380273241474255
       },
       "nextControl": null,
       "isLocked": false,
       "linkedName": null
     }
   ],
-  "rotationTargets": [
-    {
-      "waypointRelativePos": 0.45,
-      "rotationDegrees": 45.24079363499436,
-      "rotateFast": false
-    }
-  ],
+  "rotationTargets": [],
   "constraintZones": [],
   "eventMarkers": [],
   "globalConstraints": {
@@ -45,13 +39,13 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": 45.46580908276504,
+    "rotation": -60.25511870305777,
     "rotateFast": false
   },
   "reversed": false,
-  "folder": "orta otonom visionsuz",
+  "folder": "yandan",
   "previewStartingState": {
-    "rotation": 0,
+    "rotation": 0.4692347458748795,
     "velocity": 0
   },
   "useDefaultConstraints": true

@@ -4,15 +4,16 @@
   "holonomicMode": true,
   "pathFolders": [
     "4luoto",
+    "yandan",
     "alt otonom visionsuz",
     "orta otonom visionsuz"
   ],
   "autoFolders": [
     "ortadan"
   ],
-  "defaultMaxVel": 4.0,
+  "defaultMaxVel": 40.0,
   "defaultMaxAccel": 3.0,
   "defaultMaxAngVel": 540.0,
   "defaultMaxAngAccel": 720.0,
-  "maxModuleSpeed": 4.0
+  "maxModuleSpeed": 4.5
 }

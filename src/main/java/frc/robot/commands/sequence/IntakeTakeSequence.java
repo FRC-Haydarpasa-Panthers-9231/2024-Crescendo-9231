@@ -26,7 +26,7 @@ public class IntakeTakeSequence extends SequentialCommandGroup {
         )
         ),
         new InstantCommand(()->m_intakePivot.pivotSet(Rotation2d.fromDegrees(0))) // feedTop pozisyonuna getir
-        ).withTimeout(6)
+        )
 );
 
    

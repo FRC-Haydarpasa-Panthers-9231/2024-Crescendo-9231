@@ -63,11 +63,11 @@ public class DriverControlsSubsystem extends SubsystemBase{
     /*Intake roller */
     public boolean IntakeRollerIn(){
         return 
-        operatorController.getCircleButton();
+        operatorController.getPOV()==180;
     }
     
     public boolean IntakeRollerOut(){
-        return driverController.getRightBumper();
+        return operatorController.getPOV()==0;
         
     }
 
@@ -78,16 +78,16 @@ public class DriverControlsSubsystem extends SubsystemBase{
 
     public boolean ResetGyro()
     {
-        return driverController.getPOV()==0;
+        return driverController.getYButton();
     }
 
     /*Shooter roller */
     public boolean SpeakerShootRoller(){
-        return driverController.getRightTriggerAxis() > 0;
+        return operatorController.getCrossButton();
     }
      public boolean AmpShoot()
     {
-        return driverController.getLeftTriggerAxis() > 0;
+        return driverController.getAButton();
     }
 
     /*Climber */
@@ -100,7 +100,7 @@ public class DriverControlsSubsystem extends SubsystemBase{
 
 
     public boolean ShooterFixedPos(){
-        return operatorController.getOptionsButton();
+        return operatorController.getSquareButton();
     }
 
     public boolean Climber2Positive()
@@ -116,11 +116,11 @@ public class DriverControlsSubsystem extends SubsystemBase{
    
   
     public boolean IntakeTakeCommand(){
-        return driverController.getXButton();
+        return operatorController.getTriangleButton();
     }
 
       public boolean IntakeAmpPose(){
-        return operatorController.getPOV()==0;
+        return operatorController.getOptionsButton();
     }
 
     public boolean IntakeGroundPose()
@@ -135,7 +135,7 @@ public class DriverControlsSubsystem extends SubsystemBase{
 
     public boolean IntakeStartPose()
     {
-        return operatorController.getPOV()==180;
+        return operatorController.getShareButton();
     }
 
     public boolean slowMod()
@@ -145,7 +145,7 @@ public class DriverControlsSubsystem extends SubsystemBase{
 
     public boolean limelightPose()
     {
-        return operatorController.getSquareButton();
+        return operatorController.getCircleButton();
     }
 
 
@@ -157,7 +157,7 @@ public class DriverControlsSubsystem extends SubsystemBase{
         () -> MathUtil.applyDeadband(driverController.getLeftY(), OperatorConstants.LEFTY_DEADBAND)*speedRate,
         () -> MathUtil.applyDeadband(driverController.getLeftX(), OperatorConstants.LEFTX_DEADBAND)*speedRate,
         () ->  MathUtil.applyDeadband(driverController.getRightX(), OperatorConstants.RIGHTX_DEADBAND),
-        ()->!driverController.getLeftBumper());
+        ()->!driverController.getRightBumper());
 
         swerveSubsystem.setDefaultCommand(driveFieldOrientedDirectAngle);
     // Intake
@@ -177,7 +177,7 @@ public class DriverControlsSubsystem extends SubsystemBase{
                                 .onFalse((new ShooterRoller(0)));
 
     // Climber
-   /* new Trigger(this::Climber1Positive).onTrue(new InstantCommand(()->m_climber.climber1Motor(Constants.ClimberConstant.CLIMBER_POWER)))
+    new Trigger(this::Climber1Positive).onTrue(new InstantCommand(()->m_climber.climber1Motor(Constants.ClimberConstant.CLIMBER_POWER)))
                                         .onFalse(new InstantCommand(()->m_climber.climber1Motor(0)));
     new Trigger(this::Climber1Negative).onTrue(new InstantCommand(()->m_climber.climber1Motor(-Constants.ClimberConstant.CLIMBER_POWER)))
                                         .onFalse(new InstantCommand(()->m_climber.climber1Motor(0)));
@@ -185,15 +185,14 @@ public class DriverControlsSubsystem extends SubsystemBase{
                                         .onFalse(new InstantCommand(()->m_climber.climber2Motor(0)));
     new Trigger(this::Climber2Negative).onTrue(new InstantCommand(()->m_climber.climber2Motor(-Constants.ClimberConstant.CLIMBER_POWER)))
                                         .onFalse(new InstantCommand(()->m_climber.climber2Motor(0)));
-*/
+
     // intake pose
     new Trigger(this::IntakeAmpPose).onTrue(new InstantCommand(()->m_intakePivot.pivotSet(Rotation2d.fromDegrees(90))));
                                         
     new Trigger(this::IntakeGroundPose).onTrue(new InstantCommand(()->m_intakePivot.pivotSet(Rotation2d.fromDegrees(210))));
                                         
-     new Trigger(this::IntakeFeedPose).onTrue(new InstantCommand(()->m_intakePivot.pivotSet(Rotation2d.fromDegrees(0))));
-
-    new Trigger(this::IntakeStartPose).onTrue(new InstantCommand(()->m_intakePivot.pivotSet(Rotation2d.fromDegrees(-5))));
+     new Trigger(this::IntakeFeedPose).onTrue(new InstantCommand(()->m_intakeRoller.setRollerMotor(0)).andThen(new InstantCommand(()->m_intakePivot.pivotSet(Rotation2d.fromDegrees(0)))));
+    new Trigger(this::IntakeStartPose).onTrue(new InstantCommand(()->m_intakeRoller.setRollerMotor(0)).andThen(new InstantCommand(()->m_intakePivot.pivotSet(Rotation2d.fromDegrees(-5)))));
                                         
 
     // Command 

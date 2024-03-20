@@ -38,7 +38,7 @@ public class ShooterPivotSubsystem extends SubsystemBase {
 
         absoluteEncoder.reset();
 
-        shooterPID=new PIDController(3,0,0);
+        shooterPID=new PIDController(6,0,0);
         PIDinitialize(0.965); //0.965 amp 0.96 shooter
         SmartDashboard.putNumber("Shooter SetPoint",getAbsoluteDegree());
         
@@ -121,23 +121,23 @@ public class ShooterPivotSubsystem extends SubsystemBase {
     public static final InterpolatingDoubleTreeMap DISTANCE_TO_ANGLE_MAP = new InterpolatingDoubleTreeMap();
 
     static {
-        DISTANCE_TO_ANGLE_MAP.put(17.3, 0.965);
+        DISTANCE_TO_ANGLE_MAP.put(14.2, 0.965);
         DISTANCE_TO_ANGLE_MAP.put(16.89, 0.965);
-        DISTANCE_TO_ANGLE_MAP.put(13.5,0.97);
-        DISTANCE_TO_ANGLE_MAP.put(11.30,0.976);
-        DISTANCE_TO_ANGLE_MAP.put(9.14,0.98); 
-        DISTANCE_TO_ANGLE_MAP.put(7.3,0.984);
-        DISTANCE_TO_ANGLE_MAP.put(5.37,0.988);
-        DISTANCE_TO_ANGLE_MAP.put(3.34,0.99);
-        DISTANCE_TO_ANGLE_MAP.put(1.95,0.995); 
-        DISTANCE_TO_ANGLE_MAP.put(0.53,0.997); 
-        DISTANCE_TO_ANGLE_MAP.put(-0.84,0.999); 
-        DISTANCE_TO_ANGLE_MAP.put(-2.28,1.0); 
-        DISTANCE_TO_ANGLE_MAP.put(-3.38,1.005);
-        DISTANCE_TO_ANGLE_MAP.put(-4.59,1.005);
-        DISTANCE_TO_ANGLE_MAP.put(-5.52,1.008);
-        DISTANCE_TO_ANGLE_MAP.put(-6.51,1.01);
-        DISTANCE_TO_ANGLE_MAP.put(-7.53,1.013);  
+        DISTANCE_TO_ANGLE_MAP.put(11.75,0.97);
+        DISTANCE_TO_ANGLE_MAP.put(9.45,0.976);
+        DISTANCE_TO_ANGLE_MAP.put(7.45,0.98); 
+        DISTANCE_TO_ANGLE_MAP.put(5.59,0.984);
+        DISTANCE_TO_ANGLE_MAP.put(3.91,0.988);
+        DISTANCE_TO_ANGLE_MAP.put(2.3,0.99);
+        DISTANCE_TO_ANGLE_MAP.put(0.76,0.995); 
+        DISTANCE_TO_ANGLE_MAP.put(-0.68,0.997); 
+        DISTANCE_TO_ANGLE_MAP.put(-1.91,0.999); 
+        DISTANCE_TO_ANGLE_MAP.put(-3.20,1.0); 
+        DISTANCE_TO_ANGLE_MAP.put(-4.3,1.005);
+        DISTANCE_TO_ANGLE_MAP.put(-5.42,1.005);
+        DISTANCE_TO_ANGLE_MAP.put(-6.4,1.008);
+        DISTANCE_TO_ANGLE_MAP.put(-7.3,1.01);
+        DISTANCE_TO_ANGLE_MAP.put(-8.2,1.013);  
         //DISTANCE_TO_ANGLE_MAP.put(3.0, ArmConstants.kOffset - 0.058);
         //DISTANCE_TO_ANGLE_MAP.put(4.1, ArmConstants.kOffset - 0.038);
         //DISTANCE_TO_ANGLE_MAP.put(4.9, ArmConstants.kOffset - 0.035);
