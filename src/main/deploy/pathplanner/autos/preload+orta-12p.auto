@@ -2,8 +2,8 @@
   "version": 1.0,
   "startingPose": {
     "position": {
-      "x": 1.3491521419562087,
-      "y": 5.539225686154654
+      "x": 1.3535296301361848,
+      "y": 5.574822688106915
     },
     "rotation": 0
   },
@@ -34,7 +34,7 @@
                     {
                       "type": "path",
                       "data": {
-                        "pathName": "ittifak 2.nota ileri ortadan "
+                        "pathName": "ortadan_duz"
                       }
                     }
                   ]

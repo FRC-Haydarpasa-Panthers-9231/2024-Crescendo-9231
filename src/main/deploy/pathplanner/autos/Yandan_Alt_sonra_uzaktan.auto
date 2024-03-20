@@ -2,10 +2,10 @@
   "version": 1.0,
   "startingPose": {
     "position": {
-      "x": 1.4028643441902284,
-      "y": 5.584689630917723
+      "x": 0.73,
+      "y": 4.356431195030721
     },
-    "rotation": 0
+    "rotation": -60.25999999999999
   },
   "command": {
     "type": "sequential",
@@ -22,12 +22,6 @@
           "data": {
             "commands": [
               {
-                "type": "named",
-                "data": {
-                  "name": "intakeTakeSequence"
-                }
-              },
-              {
                 "type": "sequential",
                 "data": {
                   "commands": [
@@ -40,19 +34,31 @@
                     {
                       "type": "path",
                       "data": {
-                        "pathName": "ortadan_duz"
+                        "pathName": "Alttan_yana"
                       }
                     }
                   ]
+                }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "intakeTakeSequence"
                 }
               }
             ]
           }
         },
         {
+          "type": "path",
+          "data": {
+            "pathName": "yandan_alta"
+          }
+        },
+        {
           "type": "wait",
           "data": {
-            "waitTime": 2.0
+            "waitTime": 1.5
           }
         },
         {
@@ -66,9 +72,9 @@
           "data": {
             "commands": [
               {
-                "type": "named",
+                "type": "path",
                 "data": {
-                  "name": "intakeTakeSequence"
+                  "pathName": "Alttan_uzaga"
                 }
               },
               {
@@ -78,19 +84,31 @@
                     {
                       "type": "wait",
                       "data": {
-                        "waitTime": 0.2
+                        "waitTime": 1.5
                       }
                     },
                     {
-                      "type": "path",
+                      "type": "named",
                       "data": {
-                        "pathName": "Ortadan_alta"
+                        "name": "intakeTakeSequence"
                       }
                     }
                   ]
                 }
               }
             ]
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "Uzaktan_alta"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "shootSequence"
           }
         }
       ]

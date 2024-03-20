@@ -21,7 +21,7 @@ public class IntakeTakeSequence extends SequentialCommandGroup {
        new ParallelCommandGroup(
         new InstantCommand(()->m_intakePivot.pivotSet(Rotation2d.fromDegrees(204))), //intake bottom pozisyonuna getir
         new SequentialCommandGroup(
-          new WaitCommand(0.5), // yarım saniye bekle
+          new WaitCommand(0.8), // yarım saniye bekle
             new IntakeRoller(-Constants.IntakeConstants.ROLLER_POWER) // içeri nota al(limit switchden dolayı içeri alınca bitmesi lazım.)
         )
         ).withTimeout(60),
