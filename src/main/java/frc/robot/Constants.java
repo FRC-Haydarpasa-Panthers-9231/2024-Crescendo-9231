@@ -40,8 +40,8 @@ public final class Constants {
     public static final int ROLLER_MOTOR_PORT = 15;
     public static final double PIVOT_POWER = 0.3;
     public static final double AMP_SHOOT_POWER = 6;
-    public static final double ROLLER_POWER = 11.5;
-    public static final double INTAKE_P=0.01;
+    public static final double ROLLER_POWER = 8.5;
+    public static final double INTAKE_P=0.009;
     public static final double INTAKE_I=0.00;
     public static final double INTAKE_D=0.0005;
     public static final int kCPR=8192;
