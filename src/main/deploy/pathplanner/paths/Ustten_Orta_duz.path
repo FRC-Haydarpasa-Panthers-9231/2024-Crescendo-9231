@@ -3,25 +3,25 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 8.43,
-        "y": 0.78
+        "x": 2.52,
+        "y": 7.0
       },
       "prevControl": null,
       "nextControl": {
-        "x": 6.6005935796503685,
-        "y": 0.4725487974098078
+        "x": 2.4851032868970147,
+        "y": 7.026501927468906
       },
       "isLocked": false,
       "linkedName": null
     },
     {
       "anchor": {
-        "x": 1.0563812283116707,
-        "y": 4.133925300660873
+        "x": 2.5553683061717036,
+        "y": 5.562647359246215
       },
       "prevControl": {
-        "x": 0.9391180320822197,
-        "y": 2.4470018170805568
+        "x": 2.5787899792632665,
+        "y": 5.574358195791997
       },
       "nextControl": null,
       "isLocked": false,
@@ -39,11 +39,11 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": -59.69178516408571,
+    "rotation": 0,
     "rotateFast": false
   },
   "reversed": false,
-  "folder": "yandan",
+  "folder": null,
   "previewStartingState": {
     "rotation": 0,
     "velocity": 0
